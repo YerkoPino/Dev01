@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Acta Reunions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Correlativo</th>
+      <th>Proyecto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @acta_reunions.each do |acta_reunion| %>
+      <tr>
+        <td><%= acta_reunion.fecha %></td>
+        <td><%= acta_reunion.correlativo %></td>
+        <td><%= acta_reunion.proyecto %></td>
+        <td><%= link_to 'Show', acta_reunion %></td>
+        <td><%= link_to 'Edit', edit_acta_reunion_path(acta_reunion) %></td>
+        <td><%= link_to 'Destroy', acta_reunion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Acta reunion', new_acta_reunion_path %>

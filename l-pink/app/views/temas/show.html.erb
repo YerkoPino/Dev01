@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @tema.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @tema.descripcion %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @tema.estado %>
+</p>
+
+<p>
+  <strong>Acta reunion:</strong>
+  <%= @tema.acta_reunion %>
+</p>
+
+<%= link_to 'Edit', edit_tema_path(@tema) %> |
+<%= link_to 'Back', temas_path %>

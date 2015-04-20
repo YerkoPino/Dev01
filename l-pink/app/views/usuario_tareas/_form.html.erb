@@ -1,0 +1,29 @@
+<%= form_for(@usuario_tarea) do |f| %>
+  <% if @usuario_tarea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usuario_tarea.errors.count, "error") %> prohibited this usuario_tarea from being saved:</h2>
+
+      <ul>
+      <% @usuario_tarea.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :responsable %><br>
+    <%= f.check_box :responsable %>
+  </div>
+  <div class="field">
+    <%= f.label :tarea_id %><br>
+    <%= f.text_field :tarea_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

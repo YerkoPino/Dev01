@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Estado Tareas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estado_tareas.each do |estado_tarea| %>
+      <tr>
+        <td><%= estado_tarea.nombre %></td>
+        <td><%= estado_tarea.descripcion %></td>
+        <td><%= link_to 'Show', estado_tarea %></td>
+        <td><%= link_to 'Edit', edit_estado_tarea_path(estado_tarea) %></td>
+        <td><%= link_to 'Destroy', estado_tarea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Estado tarea', new_estado_tarea_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Usuario Acta Reunions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Acta reunion</th>
+      <th>User</th>
+      <th>Secretario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usuario_acta_reunions.each do |usuario_acta_reunion| %>
+      <tr>
+        <td><%= usuario_acta_reunion.acta_reunion %></td>
+        <td><%= usuario_acta_reunion.user %></td>
+        <td><%= usuario_acta_reunion.secretario %></td>
+        <td><%= link_to 'Show', usuario_acta_reunion %></td>
+        <td><%= link_to 'Edit', edit_usuario_acta_reunion_path(usuario_acta_reunion) %></td>
+        <td><%= link_to 'Destroy', usuario_acta_reunion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usuario acta reunion', new_usuario_acta_reunion_path %>

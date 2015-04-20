@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2015-04-19
+  correlativo: 1
+  proyecto_id: 
+
+two:
+  fecha: 2015-04-19
+  correlativo: 1
+  proyecto_id: 

@@ -2,7 +2,7 @@
 scaffold:
 	# Your scaffold here
 	rails g scaffold Proyecto \
-		nonmbre:string{30} \
+		nombre:string{30} \
 		descripcion:string{300} \
 		fecha_inicio:date \
 		fecha_fin:date;

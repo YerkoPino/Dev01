@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  acta_reunion_id: 
+  user_id: 
+  secretario: false
+
+two:
+  acta_reunion_id: 
+  user_id: 
+  secretario: false

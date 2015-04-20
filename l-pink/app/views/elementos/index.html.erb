@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Elementos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Estado</th>
+      <th>Tipo</th>
+      <th>Fecha compromiso</th>
+      <th>Contexto</th>
+      <th>Tema</th>
+      <th>Elemento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @elementos.each do |elemento| %>
+      <tr>
+        <td><%= elemento.nombre %></td>
+        <td><%= elemento.descripcion %></td>
+        <td><%= elemento.estado %></td>
+        <td><%= elemento.tipo %></td>
+        <td><%= elemento.fecha_compromiso %></td>
+        <td><%= elemento.contexto %></td>
+        <td><%= elemento.tema %></td>
+        <td><%= elemento.elemento %></td>
+        <td><%= link_to 'Show', elemento %></td>
+        <td><%= link_to 'Edit', edit_elemento_path(elemento) %></td>
+        <td><%= link_to 'Destroy', elemento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Elemento', new_elemento_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Usuario Tareas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Responsable</th>
+      <th>Tarea</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usuario_tareas.each do |usuario_tarea| %>
+      <tr>
+        <td><%= usuario_tarea.responsable %></td>
+        <td><%= usuario_tarea.tarea %></td>
+        <td><%= usuario_tarea.user %></td>
+        <td><%= link_to 'Show', usuario_tarea %></td>
+        <td><%= link_to 'Edit', edit_usuario_tarea_path(usuario_tarea) %></td>
+        <td><%= link_to 'Destroy', usuario_tarea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usuario tarea', new_usuario_tarea_path %>

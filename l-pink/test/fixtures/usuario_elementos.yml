@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  responsable: false
+  elemento_id: 
+  user_id: 
+
+two:
+  responsable: false
+  elemento_id: 
+  user_id: 

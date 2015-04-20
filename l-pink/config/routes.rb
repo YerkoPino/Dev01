@@ -1,9 +1,24 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  resources :usuario_tareas
+  resources :usuario_elementos
+  resources :usuario_acta_reunions
+  resources :usuario_proyectos
+  resources :comentarios
+  resources :tareas
+  resources :estado_tareas
+  resources :elementos
+  resources :temas
+  resources :acta_reunions
+  resources :proyectos
+  get 'home/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -53,4 +68,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  post ':controller(/:action(/:id))'
+  get ':controller(/:action(/:id))'  
 end

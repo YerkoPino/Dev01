@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Acta reunion:</strong>
+  <%= @usuario_acta_reunion.acta_reunion %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @usuario_acta_reunion.user %>
+</p>
+
+<p>
+  <strong>Secretario:</strong>
+  <%= @usuario_acta_reunion.secretario %>
+</p>
+
+<%= link_to 'Edit', edit_usuario_acta_reunion_path(@usuario_acta_reunion) %> |
+<%= link_to 'Back', usuario_acta_reunions_path %>

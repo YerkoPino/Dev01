@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @elemento.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @elemento.descripcion %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @elemento.estado %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @elemento.tipo %>
+</p>
+
+<p>
+  <strong>Fecha compromiso:</strong>
+  <%= @elemento.fecha_compromiso %>
+</p>
+
+<p>
+  <strong>Contexto:</strong>
+  <%= @elemento.contexto %>
+</p>
+
+<p>
+  <strong>Tema:</strong>
+  <%= @elemento.tema %>
+</p>
+
+<p>
+  <strong>Elemento:</strong>
+  <%= @elemento.elemento %>
+</p>
+
+<%= link_to 'Edit', edit_elemento_path(@elemento) %> |
+<%= link_to 'Back', elementos_path %>
