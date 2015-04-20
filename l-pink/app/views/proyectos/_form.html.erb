@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <%= form_for(@proyecto) do |f| %>
   <% if @proyecto.errors.any? %>
     <div id="error_explanation">
@@ -30,4 +31,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+<% end %>
 <% end %>

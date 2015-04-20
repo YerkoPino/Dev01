@@ -1,6 +1,7 @@
+<% if user_signed_in? %>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Proyectos</h1>
+<h1>Proyectos</h1>
 
 <table>
   <thead>
@@ -31,3 +32,4 @@
 <br>
 
 <%= link_to 'New Proyecto', new_proyecto_path %>
+<% end %>
