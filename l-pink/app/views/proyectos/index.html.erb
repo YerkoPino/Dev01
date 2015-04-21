@@ -21,9 +21,9 @@
         <td><%= proyecto.descripcion %></td>
         <td><%= proyecto.fecha_inicio %></td>
         <td><%= proyecto.fecha_fin %></td>
-        <td><%= link_to 'Show', proyecto %></td>
-        <td><%= link_to 'Edit', edit_proyecto_path(proyecto) %></td>
-        <td><%= link_to 'Destroy', proyecto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', proyecto, :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC " %></td>
+        <td><%= link_to 'Editar', edit_proyecto_path(proyecto), :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC " %></td>
+        <td><%= link_to 'eliminar', proyecto, method: :delete, data: { confirm: '¿Estás seguro que quieres eliminarlo?' }, :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC " %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,5 +31,5 @@
 
 <br>
 
-<%= link_to 'New Proyecto', new_proyecto_path %>
+<%= link_to 'Nuevo Proyecto', new_proyecto_path, :class=>"waves-effect waves-light btn", :style => "color:white" %>
 <% end %>

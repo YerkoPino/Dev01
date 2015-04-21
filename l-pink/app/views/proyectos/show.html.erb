@@ -22,6 +22,6 @@
   <%= @proyecto.fecha_fin %>
 </p>
 
-<%= link_to 'Edit', edit_proyecto_path(@proyecto) %> |
-<%= link_to 'Back', proyectos_path %>
+<%= link_to 'Editar', edit_proyecto_path(@proyecto), :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC " %> |
+<%= link_to 'Atrás', proyectos_path, :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC " %>
 <%end%>
