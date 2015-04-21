@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Proyecto.create(:nombre => 'seeds', :descripcion => 'poblado desde seeds', :fecha_inicio => '2015-11-29', :fecha_fin => '2015-11-29')

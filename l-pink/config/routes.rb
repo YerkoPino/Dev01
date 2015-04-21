@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   devise_for :users
   resources :usuario_tareas
   resources :usuario_elementos
