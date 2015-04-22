@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419201223) do
+ActiveRecord::Schema.define(version: 20150419201224) do
 
   create_table "acta_reunions", force: :cascade do |t|
     t.date     "fecha"
