@@ -15,6 +15,8 @@ class UsuarioProyectosController < ApplicationController
   # GET /usuario_proyectos/new
   def new
     @usuario_proyecto = UsuarioProyecto.new
+    @proyecto = Proyecto.find(params[:id])
+    @usuarios = UsuarioProyecto.all.where("proyecto_id=?",@proyecto.id)
   end
 
   # GET /usuario_proyectos/1/edit
@@ -28,8 +30,8 @@ class UsuarioProyectosController < ApplicationController
 
     respond_to do |format|
       if @usuario_proyecto.save
-        format.html { redirect_to @usuario_proyecto, notice: 'Usuario proyecto was successfully created.' }
-        format.json { render :show, status: :created, location: @usuario_proyecto }
+        format.html { redirect_to new_usuario_proyecto_path(id: @usuario_proyecto.proyecto_id), notice: 'Usuario proyecto was successfully created.' }
+        #format.json { render :show, status: :created, location: @usuario_proyecto }
       else
         format.html { render :new }
         format.json { render json: @usuario_proyecto.errors, status: :unprocessable_entity }

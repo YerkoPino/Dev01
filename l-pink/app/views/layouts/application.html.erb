@@ -2,180 +2,254 @@
 <html>
 <head>
   <title>LPink</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css","bootstrap-wysihtml5" , "paletaColores", "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", "http://fonts.googleapis.com/css?family=Pacifico" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= javascript_include_tag 'https://code.jquery.com/jquery-2.1.1.min.js' %>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js' %>
+  <%= javascript_include_tag 'wysihtml-toolbar.min.js' %>
+  <%= javascript_include_tag 'advanced_and_extended.js' %>
   <%= csrf_meta_tags %>
-  <!--<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>-->
-  <%= stylesheet_link_tag "materialize.min.css" %>
-      <!--<link type="text/css" rel="stylesheet" href="css/paletaColores.css"  media="screen,projection"/>-->
-  <%= stylesheet_link_tag "paletaColores.css" %>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 </head>
 
-
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <!--<script type="text/javascript" src="js/materialize.min.js"></script>-->
-      <%= javascript_include_tag "materialize.min.js" %>
-
-
-<% if user_signed_in? %>
-<style type="text/css">
-   * {
-margin: 0;
-}
-html, body {
-height: 100%;
-}
-.wrapper {
-min-height: 100%;
-height: auto !important;
-height: 100%;
-margin: 0 auto -4em;
-}
-.footer, .push {
-height: 4em;
-clear: both;
-}
-</style>
-
-<nav  class="morado-rosado">
-  <ul id="slide-out" class="side-nav">
-    <li><a href="#!">First Sidebar Link</a></li>
-    <li><a href="#!">Second Sidebar Link</a></li>
-    <li class="no-padding">
-      <ul class="collapsible collapsible-accordion">
-        <li>
-          <a class="collapsible-header">Dropdown<i class="mdi-navigation-arrow-drop-down"></i></a>
-          <div class="collapsible-body">
-            <ul>
-              <li><a href="#!">First</a></li>
-              <li><a href="#!">Second</a></li>
-              <li><a href="#!">Third</a></li>
-              <li><a href="#!">Fourth</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </li>
-    <li></li>
-    <br>
-    <div class="center-align"><img src="../../assets/logo3.png" alt="" class="responsive-img adaptarLogo2"></div>
-  </ul>
- <div class="menupad">
-    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
-    <a href="#" class="brand-logo"> <img src="../../assets/logo4.png" alt="" class="responsive-img adaptarLogo"></a>  
-</div>
-      
-</nav>
-    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large red">
-              <i class="large mdi-action-note-add"></i>
-            </a>
-            <ul>
-              <li><a class="btn-floating red"><i class="large mdi-editor-insert-chart"></i></a></li>
-              <li><a class="btn-floating yellow darken-1"><i class="large mdi-editor-format-quote"></i></a></li>
-              <li><a class="btn-floating green"><i class="large mdi-editor-publish"></i></a></li>
-              <li><a class="btn-floating blue"><i class="large mdi-editor-attach-file"></i></a></li>
-            </ul>
-          </div>
-<br><br>
-<%else%>    
-<style type="text/css">
-   * {
-margin: 0;
-}
-html, body {
-height: 100%;
-}
-.wrapper {
-min-height: 100%;
-height: auto !important;
-height: 100%;
-margin: 0 auto -4em;
-}
-.footer, .push {
-height: 4em;
-clear: both;
-}
-</style>
-
-<nav  class="morado-rosado">
-  <ul id="slide-out" class="side-nav">
-    <li><a href="#!">First Sidebar Link</a></li>
-    <li><a href="#!">Second Sidebar Link</a></li>
-    <li class="no-padding">
-      <ul class="collapsible collapsible-accordion">
-        <li>
-          <a class="collapsible-header">Dropdown<i class="mdi-navigation-arrow-drop-down"></i></a>
-          <div class="collapsible-body">
-            <ul>
-              <li><a href="#!">First</a></li>
-              <li><a href="#!">Second</a></li>
-              <li><a href="#!">Third</a></li>
-              <li><a href="#!">Fourth</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </li>
-    <li></li>
-    <br>
-    <div class="center-align"><img src="../../assets/logo3.png" alt="" class="responsive-img adaptarLogo2"></div>
-  </ul>
- <div class="menupad">
-    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
-    <a href="#" class="brand-logo"> <img src="../../assets/logo4.png" alt="" class="responsive-img adaptarLogo"></a>  
-</div>
-      
-</nav>
-    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large red">
-              <i class="large mdi-action-note-add"></i>
-            </a>
-            <ul>
-              <li><a class="btn-floating red"><i class="large mdi-editor-insert-chart"></i></a></li>
-              <li><a class="btn-floating yellow darken-1"><i class="large mdi-editor-format-quote"></i></a></li>
-              <li><a class="btn-floating green"><i class="large mdi-editor-publish"></i></a></li>
-              <li><a class="btn-floating blue"><i class="large mdi-editor-attach-file"></i></a></li>
-            </ul>
-          </div>
-<br><br>
-
-<%end%>  
-
-<body class= "morado-claro">
-  <div class="contain blanco wrapper"><br>
-
-  <% if user_signed_in? %>
-              <ul class="nav navbar-nav navbar-right">
-                Hola <b><%= current_user.nombre %></b>
-                <%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC "%> |
-                <%= link_to "Salir", destroy_user_session_path, method: :get, :class => 'navbar-link pink-text text-lighten-3',:style=> "color:#A2C4DC " %>
+  <body class= "morado-claro">
+  <nav  class="morado-rosado">
+    <ul id="slide-out" class="side-nav">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="#!">Mis Proyectos</a></li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Configuracion<i class="mdi-navigation-arrow-drop-down"></i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">Perfil</a></li>
+                <li><a href="#!">Ajustes</a></li>
+                <li><a href="#!">Ayuda</a></li>
+                <li><a href="#!">Cerrar Sesion</a></li>
               </ul>
-<%end%>
-  <%= yield %>
-  <div class="push"></div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li></li>
+      <br>
+      <div class="center-align"><%= image_tag "logo3.png", :class => "responsive-img adaptarLogo2", :title => "logo"%></div>
+    </ul>
+   <div class="menupad">
+      <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+      <a href="/" class="brand-logo"><%= image_tag "logo4.png", :class => "responsive-img adaptarLogo", :title => "logo"%></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <!--<li style="padding-top:10px;padding-right: 20px;"><a class="btn-floating btn red modal-trigger" href="#modal1"><i class="fa fa-user"></i></a></li>-->
+         <% if current_user %>  
+        <li style="padding-top:10px;">
+          <!--<a class="btn-floating btn red modal-trigger" href="#modal1">
+            <i class="fa fa-user"></i>
+          </a>
+          <%= link_to "",new_session_path,:class => "btn-floating btn red modal-trigger" %>-->
+          
+            <%= current_user.email %>  
+        </li>
+        <li style="padding-top:10px;padding-right: 20px;">
+            <%= link_to "Cerrar Sesión", log_out_path,:class => "modal-action modal-close waves-effect waves-green btn" %>  
+        </li>
+          <% else %>  
+            <% if !current_page?(log_in_path) %>
+              <li style="padding-top:10px;padding-right: 20px;">
+                <%= link_to "Iniciar Sesión", log_in_path,:class => "modal-action modal-close waves-effect waves-green btn" %>  
+              </li>
+            <% else %>
+              <li style="padding-top:10px;padding-right: 20px;">
+                <%= link_to "Volver", root_url ,:class => "modal-action modal-close waves-effect waves-green btn" %>  
+              </li>
+            <% end %>
+          <% end %>  
+          
+        
+        
+      </ul>  
   </div>
-</body>
+        
+  </nav>
+
+     <div class="container blanco">
 
 
-<footer class="page-footer">
+     <!-- Modal Trigger -->
+ 
+
+      <!-- Modal Structure INICIO DE SESIÓN -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4 class="green-text">Inicio de sesión</h4>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                
+                <!--<div class="input-field">
+                  <i class="mdi-action-account-circle prefix"></i>
+                  <input id="icon_prefix" type="text" class="validate">
+                  <label for="icon_prefix">Usuario</label>
+                </div>
+                <div class="input-field">
+                  <i class="fa fa-key prefix"></i>
+                  <input id="password" type="password" class="validate">
+                  <label for="password">Constraseña</label>
+                </div>-->
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn">Listo</a>
+        </div>
+  </div>  
+
+
+
+
+</div>
+<br><br>
+
+ <div class="row">
+                 <div class="row container blanco">
+                 <br><br><br>
+                      <!--<div ALIGN="right" class="col s10"><%= image_tag "welcomeMessage.png", :class => "responsive-img", :title => "mensaje"%>
+                      <h6 ALIGN="right" class="grey-text darken-2" style= " font-family: Pacifico; ">La nueva aplicación de apoyo a la gestión de actas dialógicas</h6>
+
+                      </div>
+
+                      <br>
+
+                    <div class="col s12">
+                      <br><br><br>
+                      <ul class="tabs">
+                        <li class="tab col s4"><a href="#test1">Gestión de proyectos</a></li>
+                        <li class="tab col s4"><a class="active" href="#test2">Gestión de actas dialógicas</a></li>
+                        <li class="tab col s4"><a href="#test3">Trazabilidad de elementos dialógicos</a></li>
+                  
+                      </ul>
+                    </div>
+                    <div id="test1" class="row">
+                        <div class="col s4">
+                          <br><br>
+                            <div class="card small">
+                            <div class="card-image">
+                              <%= image_tag "proyectos.jpg", :class => "responsive-img", :title => "proy"%>
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4">Gestión de proyectos <i class="mdi-navigation-more-vert right"></i></span>
+                            </div>
+                            <div class="card-reveal">
+                              <span class="card-title grey-text text-darken-4">Gestión de proyectos <i class="mdi-navigation-close right"></i></span>
+                              <p>Nunca más olvides un proyecto por darle importancia a otros</p>
+                            </div>
+                          </div>
+                        </div>
+                        <br><br>
+                        <div class="col s7">
+                            <br><br><br>
+                            <div class="well">
+                              <h5 class="deep-purple-text darken-4"><i class="fa fa-suitcase blue-text"></i>   Ingresa tus proyectos al sistema</h5>
+                              <p> Manten un repositorio con todos ellos, para mantener información actulizada y a la mano de cada uno.</p>
+                            </div>
+                           
+
+                        </div>
+                    </div>
+                    <div id="test2" class="row">
+                          <div class="col s4">
+                          <br><br>
+                            <div class="card small">
+                              <div class="card-image">
+                                <%= image_tag "elementos.jpg", :class => "responsive-img", :title => "elem"%>
+                              </div>
+                              <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">Gestión de actas dialógicas <i class="mdi-navigation-more-vert right"></i></span>
+                                
+                              </div>
+                              <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Gestión de actas dialógicas <i class="mdi-navigation-close right"></i></span>
+                                <p>!Nunca más olvidaras los temas tratados en tu reunión!</p>
+                              </div>
+                            </div>
+                          </div>
+                        <br><br>
+                        <div class="col s7">
+                            <br><br><br>
+                            <div class="well">
+                              <h5 class="teal-text darken-4"><i class="fa fa-file green-text"></i>   Crea las actas de tu reunión</h5>
+                              <p> Manten un repositorio con todos ellos, para mantener información actulizada y a la mano de cada uno.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="test3" class="row">
+                           <div class="col s4">
+                          <br><br>
+                            <div class="card small">
+                                  <div class="card-image">
+                                    <%= image_tag "traza.jpg", :class => "responsive-img", :title => "traza"%>
+                                  </div>
+                                  <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Trazabilidad de elementos dialógicos<i class="mdi-navigation-more-vert right"></i></span>
+                                    
+                                  </div>
+                                  <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Trazabilidad de elementos dialógicos <i class="mdi-navigation-close right"></i></span>
+                                    <p> Te el control absoluto de todos los COMPROMISOS, ACUERDOS, las DUDAS y los DESACUERDOS</p>
+                                  </div>
+                                </div>
+                        </div>
+                        <br><br>
+                        <div class="col s7">
+                            <br><br><br>
+                            <div class="well">
+                              <h5 class="brown-text darken-4"><i class="fa fa-cubes orange-text"></i>   Crea grafos dinámicos que relacionene tus elementos dialógicos</h5>
+                              <p> Nuestro sitema provee mecanismos de seguimiento para cada uno de tus Compromisos, Acerudos, Dudas y Desacuerdos.</p>
+                            </div>
+                           
+
+                        </div>
+
+                    </div>-->
+                    
+                    <%= yield %>
+                    <br/><br/><br/><br/>
+                  </div>
+    
+  
+  
+                  <div class="parallax-container">
+                  <div class="parallax"><%= image_tag "ele2.jpg", :title => "ele"%></div>
+                  </div>
+                    <div class="section white">
+                      <div class="row container">
+                        <h2 class="header">l-<span class="pink-text">pink</span> </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ipsa neque quae, aperiam sunt labore eveniet molestias, magni sequi maiores, eligendi similique eos odio. Perspiciatis quos error laboriosam maiores numquam!
+                          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium at cupiditate soluta asperiores id, nostrum, doloribus porro minima fugit inventore corporis officia illum repellendus explicabo molestias tempora nam quisquam.</span><span>Quidem accusamus sequi aliquid harum reiciendis dicta a deleniti, alias, iusto aspernatur, id hic, reprehenderit dolorum dignissimos odit exercitationem odio adipisci officiis amet veritatis nisi. Molestiae reprehenderit magnam, facere placeat?</span></p>
+                      </div>
+                    </div>
+                    <div class="parallax-container">
+                      <div class="parallax"><%= image_tag "ele1.jpg", :title => "ele"%></div>
+                    </div>
+
+
+      </div>
+                <footer class="page-footer">
               <div class="container">
                 <div class="row">
                   <div class="col l6 s12 ">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    <h5 class="white-text">L-Pink </h5>
+                    <p class="grey-text text-lighten-4"> Gestion de Actas Dialogicas </p>
                   </div>
                   <div class="col l4 offset-l2 s12 ">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Quienes somos</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Preguntas frecuentes</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Ayuda</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">hola</a></li>
                     </ul>
                   </div>
                 </div>
@@ -184,60 +258,32 @@ clear: both;
         
               <div class="footer-copyright ">
                 <div class="container">
-                 © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                 © 2015 Copyright l-Pink
+                <a class="grey-text text-lighten-4 right" href="#!">Eliminar esto</a>
                 </div>
               </div>
             </footer>
+    <script type="text/javascript">
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 240
+      edge: 'right', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+    $('select').material_select();
+  });
 
+    </script>
 
-        <script>
-             $(document).ready(function(){
-                $('.collapsible').collapsible({
-                  accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-                });
-              });
+      <script>
+         $(document).ready(function(){
+      $('.parallax').parallax();
+      $('ul.tabs').tabs('select_tab', 'test1');
+    });
+      </script>
 
-
-             $('.dropdown-button').dropdown({
-                  inDuration: 300,
-                  outDuration: 225,
-                  constrain_width: false, // Does not change width of dropdown to that of the activator
-                  hover: false, // Activate on click
-                  alignment: 'left', // Aligns dropdown to left or right edge (works with constrain_width)
-                  gutter: 0, // Spacing from edge
-                  belowOrigin: false // Displays dropdown below the button
-                }
-              );
-
-             $(document).ready(function(){
-                  $('.slider').slider({
-                    full_width: true,
-                    interval: 2000,
-                    transition: 2000,
-                    height: 750,
-                    indicators: false
-                    });
-                });
-            $(document).ready(function(){
-              $('.parallax').parallax();
-            });
-        
-
-             $('.button-collapse').sideNav({
-                  menuWidth: 300, // Default is 240
-                  edge: 'right', // Choose the horizontal origin
-                  closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-                }
-              );
-
-             $(document).ready(function() {
-                $('select').material_select();
-              });
-
-              $('.datepicker').pickadate({
-                selectMonths: true, // Creates a dropdown to control month
-                selectYears: 15 // Creates a dropdown of 15 years to control year
-              });
-        </script>
+  </body>
 </html>

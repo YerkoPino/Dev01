@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
-  devise_for :users
+  get 'sessions/new'
+
+  #get 'users/new'
+
   resources :usuario_tareas
   resources :usuario_elementos
   resources :usuario_acta_reunions
@@ -13,12 +16,14 @@ Rails.application.routes.draw do
   resources :acta_reunions
   resources :proyectos
   get 'home/index'
+  get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  #root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -68,6 +73,12 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get "log_in" => "sessions#new", :as => "log_in" 
+  get "log_out" => "sessions#destroy", :as => "log_out" 
+  get "sign_up" => "users#new", :as => "sign_up"  
+  resources :users
+  resources :sessions
 
   post ':controller(/:action(/:id))'
   get ':controller(/:action(/:id))'  

@@ -1,5 +1,22 @@
-<h1>New Usuario Proyecto</h1>
+<h3>Agregar Usuarios</h3> 
+<h5>Proyecto <%= @proyecto.nombre %></h5>
+<p>Paso 2 de 2</p>
 
 <%= render 'form' %>
+<br/>
 
-<%= link_to 'Back', usuario_proyectos_path %>
+<table style="width:50%;margin:0 auto">
+  <thead>
+    <tr>
+      <th>Nombre Colaborador</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+        <td><%= usuario.user.nombre %> <%= usuario.user.apellido %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

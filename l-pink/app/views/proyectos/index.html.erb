@@ -1,16 +1,23 @@
-<% if user_signed_in? %>
+<br/>
 <p id="notice"><%= notice %></p>
 
-<h1>Proyectos</h1>
+<h3>Proyectos</h3>
+
+<table>
+<tr>
+<td>
+<%= link_to 'Nuevo Proyecto', new_proyecto_path, :class => "waves-effect waves-light btn float-left", :style => "color:white;margin-left:0px" %>
+</td>
+</tr>
+</table>
 
 <table>
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Descripcion</th>
       <th>Fecha inicio</th>
       <th>Fecha fin</th>
-      <th colspan="3"></th>
+      <th>Ver Detalles</th>
     </tr>
   </thead>
 
@@ -18,18 +25,12 @@
     <% @proyectos.each do |proyecto| %>
       <tr>
         <td><%= proyecto.nombre %></td>
-        <td><%= proyecto.descripcion %></td>
         <td><%= proyecto.fecha_inicio %></td>
         <td><%= proyecto.fecha_fin %></td>
-        <td><%= link_to 'Mostrar', proyecto, :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC " %></td>
-        <td><%= link_to 'Editar', edit_proyecto_path(proyecto), :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC " %></td>
-        <td><%= link_to 'eliminar', proyecto, method: :delete, data: { confirm: '¿Estás seguro que quieres eliminarlo?' }, :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC " %></td>
+        <td><%= link_to 'Ver Detalles', proyecto %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'Nuevo Proyecto', new_proyecto_path, :class=>"waves-effect waves-light btn", :style => "color:white" %>
-<% end %>

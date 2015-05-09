@@ -4,12 +4,13 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery with: :exception
 
   	protect_from_forgery with: :null_session
+    helper_method :resource, :resource_name,:current_user #, :devise_mapping
 
   def after_sign_in_path_for(resource)
   	request.env['omniauth.origin'] || stored_location_for(resource) || root_path 
   end
 
-  before_action :configure_devise_permitted_parameters, if: :devise_controller?  
+  #before_action :configure_devise_permitted_parameters, if: :devise_controller?  
   #before_filter :authenticate_user!
   protected
   def configure_devise_permitted_parameters
@@ -24,4 +25,21 @@ class ApplicationController < ActionController::Base
    		}
    	end
    end
+
+   def resource_name
+    :user
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
+
+  private  
+  def current_user  
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]  
+  end  
 end

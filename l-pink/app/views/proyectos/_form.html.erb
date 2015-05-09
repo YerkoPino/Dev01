@@ -1,4 +1,3 @@
-<% if user_signed_in? %>
 <%= form_for(@proyecto) do |f| %>
   <% if @proyecto.errors.any? %>
     <div id="error_explanation">
@@ -12,6 +11,8 @@
     </div>
   <% end %>
 
+  <div style="width:70%;margin:0 auto">
+
   <div class="field">
     <%= f.label :nombre %><br>
     <%= f.text_field :nombre %>
@@ -22,14 +23,16 @@
   </div>
   <div class="field">
     <%= f.label :fecha_inicio %><br>
-    <%= f.date_select :fecha_inicio %>
+    <%= f.date_select :fecha_inicio, {:use_month_names => ["Enero","Febrero","Marzo","Abirl","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]},:type => "date", :class => "datepicker" %>
   </div>
   <div class="field">
     <%= f.label :fecha_fin %><br>
     <%= f.date_select :fecha_fin %>
   </div>
   <div class="actions">
-    <%= f.submit "Crear", :class=>"btn waves-effect waves-light" %>
+    <%= f.submit "Crear", :class=>"btn btn-primary btn-xs" %>
   </div>
-<% end %>
+  <%= link_to 'Atrás', proyectos_path, :class => 'modal-action modal-close waves-effect waves-green btn' %>
+
+  </div>
 <% end %>

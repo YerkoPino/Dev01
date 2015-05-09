@@ -10,6 +10,7 @@ class ProyectosController < ApplicationController
   # GET /proyectos/1
   # GET /proyectos/1.json
   def show
+    @usuarios = UsuarioProyecto.all.where("proyecto_id=?",@proyecto.id)
   end
 
   # GET /proyectos/new
@@ -28,8 +29,8 @@ class ProyectosController < ApplicationController
 
     respond_to do |format|
       if @proyecto.save
-        format.html { redirect_to @proyecto, notice: 'Proyecto was successfully created.' }
-        format.json { render :show, status: :created, location: @proyecto }
+        format.html { redirect_to new_usuario_proyecto_path(id: @proyecto), notice: 'Proyecto was successfully created.' }
+        #format.json { render :show, status: :created, location: @proyecto }
       else
         format.html { render :new }
         format.json { render json: @proyecto.errors, status: :unprocessable_entity }

@@ -1,0 +1,40 @@
+<div style="width:40%;margin:0 auto;">
+
+<h4>Iniciar sesión</h4>
+
+<br/>
+	  
+<%= form_tag sessions_path do %>  
+
+	<div class="input-field">
+	  <i class="mdi-action-account-circle prefix"></i>
+	  <%= text_field_tag :email, params[:email], :class => "validate" %>  
+	  <%= label_tag :email %>
+	</div>
+
+	<br/>
+
+  <!--<p>  
+    <%= label_tag :email %><br />  
+    <%= text_field_tag :email, params[:email] %>  
+  </p>-->  
+
+	<div class="input-field">
+	  <i class="fa fa-key prefix"></i>
+	  <%= password_field_tag :password,"", :class => "validate" %>
+	  <%= label_tag :password %>
+	</div>
+
+	<br/>
+	<br/>
+
+  <!--<p>  
+    <%= label_tag :password %><br />  
+    <%= password_field_tag :password %>  
+  </p>-->  
+
+  <%= submit_tag "Iniciar Sesión", :class => "btn btn-success", :style => "margin-left:30%;" %>
+
+<% end %> 
+
+</div>

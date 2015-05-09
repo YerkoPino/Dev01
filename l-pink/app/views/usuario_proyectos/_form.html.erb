@@ -11,15 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :proyecto_id %><br>
-    <%= f.text_field :proyecto_id %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field" style="visibility:hidden;position:absolute" >
+      <%= f.label :proyecto_id %>
+      <%= f.collection_select :proyecto_id, Proyecto.all, :id, :id,:selected => @proyecto.id, prompt: true %>
+    </div>
+<table style="width:50%;margin:0 auto">
+  <tr>
+    <td>
+    <div class="field">
+      <%= f.collection_select :user_id, User.all, :id, :nombre, prompt: "Seleccione usuario" %>
+    </div>
+    </td>
+    <td>
+    <div class="actions">
+      <%= f.submit "Agregar Usuario", :class => "btn btn-primary btn-xs" %>
+    </div>
+    </td>
+    <td>
+    <div class="actions">
+    <%= link_to "Listo", proyecto_path(@proyecto), :class=>"waves-effect waves-light btn", :style => "color:white" %>
+    </div>
+    </td>
+  </tr>
+  </table>
 <% end %>
+

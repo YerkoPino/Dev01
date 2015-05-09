@@ -1,27 +1,56 @@
-<% if user_signed_in? %>
+  <h3>Proyecto <%= @proyecto.nombre %></h3>
+  
+<table style="width:35%;margin:0 auto">
+	<tr>
+		<td>Fecha inicio:</td>
+		<td><%= @proyecto.fecha_inicio %></td>
+		<td>&nbsp</td>
+		<td>Fecha fin:</td>
+		<td><%= @proyecto.fecha_fin %></td>
+	</tr>
+</table>
+  
+<table style="width:70%;margin:0 auto">
+<thead>
+	<tr>
+		<th>Descripción:</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td><%= @proyecto.descripcion %></td>
+	</tr>
+</tbody>
+</table>
 
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @proyecto.nombre %>
-</p>
+<table style="width:20%;margin:0 auto">
+	<tr>
+		<td>
+			<%= link_to 'Editar Poryecto', edit_proyecto_path(@proyecto), :class=>"waves-effect waves-light btn", :style => "color:white" %>
+		</td>
+		<td>
+			<%= link_to 'Volver', proyectos_path, :class=>"waves-effect waves-light btn", :style => "color:white" %>
+		</td>
+	</tr>
+</table>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @proyecto.descripcion %>
-</p>
+<br/>
 
-<p>
-  <strong>Fecha inicio:</strong>
-  <%= @proyecto.fecha_inicio %>
-</p>
-
-<p>
-  <strong>Fecha fin:</strong>
-  <%= @proyecto.fecha_fin %>
-</p>
-
-<%= link_to 'Editar', edit_proyecto_path(@proyecto), :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC " %> |
-<%= link_to 'Atrás', proyectos_path, :class => 'navbar-link pink-text text-lighten-3' ,:style=> "color:#A2C4DC " %>
-<%end%>
+<table style="width:70%;margin:0 auto">
+	<thead>
+		<tr>
+			<th width="10%">Colaboradores</th>
+			<td><%= link_to 'Editar', new_usuario_proyecto_path(id: @proyecto), :class=>"waves-effect waves-light btn", :style => "color:white" %></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2">
+			<% @usuarios.each do |user| %>
+				- <%= user.user.nombre %> <%= user.user.apellido %><br/>
+			<% end %>
+			</td>
+		</tr>
+	</tbody>
+</table>
