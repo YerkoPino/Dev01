@@ -50,7 +50,7 @@
           </a>
           <%= link_to "",new_session_path,:class => "btn-floating btn red modal-trigger" %>-->
           
-            <%= current_user.email %>  
+            <%= current_user.email %> &nbsp; 
         </li>
         <li style="padding-top:10px;padding-right: 20px;">
             <%= link_to "Cerrar Sesión", log_out_path,:class => "modal-action modal-close waves-effect waves-green btn" %>  
@@ -59,6 +59,9 @@
             <% if !current_page?(log_in_path) %>
               <li style="padding-top:10px;padding-right: 20px;">
                 <%= link_to "Iniciar Sesión", log_in_path,:class => "modal-action modal-close waves-effect waves-green btn" %>  
+              </li>
+               <li style="padding-top:10px;padding-right: 20px;">
+                <%= link_to "Registrarse", {:controller => 'users/new'},:class => "modal-action modal-close waves-effect waves-green btn" %>  
               </li>
             <% else %>
               <li style="padding-top:10px;padding-right: 20px;">
