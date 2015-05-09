@@ -16,7 +16,9 @@
   <nav  class="morado-rosado">
     <ul id="slide-out" class="side-nav">
       <li><a href="/">Inicio</a></li>
-      <li><a href="#!">Mis Proyectos</a></li>
+      <% if current_user %> 
+      <li><%= link_to "Mis proyectos", {:controller => 'proyectos/index'}%></li>
+      <%end%>
       <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
           <li>
