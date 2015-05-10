@@ -1,16 +1,19 @@
 <%= form_for(@usuario_proyecto) do |f| %>
+  
   <% if @usuario_proyecto.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@usuario_proyecto.errors.count, "error") %> prohibited this usuario_proyecto from being saved:</h2>
-
-      <ul>
-      <% @usuario_proyecto.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    
+      <p class="alert alert-danger" align="center">
+        <b>ERROR</b><br>
+        <% @usuario_proyecto.errors.full_messages.each do |message| %>
+          <%= message %><br>
+        <% end %>
+      </p>
+      
+      <br>
+      </div>
   <% end %>
-
+        
     <div class="field" style="visibility:hidden;position:absolute" >
       <%= f.label :proyecto_id %>
       <%= f.collection_select :proyecto_id, Proyecto.all, :id, :id,:selected => @proyecto.id, prompt: true %>

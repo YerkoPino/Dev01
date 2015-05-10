@@ -29,27 +29,32 @@ class UsuarioProyectosController < ApplicationController
   def create
     @usuario_proyecto = UsuarioProyecto.new(usuario_proyecto_params)
     respond_to do |format|
-      if @usuario_proyecto.save
-        @usuario_ultimo = UsuarioProyecto.last
-        @user = User.all
-        @user_destinatario = current_user
-        @proyectos = Proyecto.all
+      if @usuario_proyecto.valid?
+        if @usuario_proyecto.save
+          @usuario_ultimo = UsuarioProyecto.last
+          @user = User.all
+          @user_destinatario = current_user
+          @proyectos = Proyecto.all
 
-        @proyectos.each do |proyect| 
-          if (proyect.id == @usuario_ultimo.proyecto_id)
-            @proyecto = proyect.nombre
+          @proyectos.each do |proyect| 
+            if (proyect.id == @usuario_ultimo.proyecto_id)
+              @proyecto = proyect.nombre
+            end
           end
-        end
 
-        @user.each do |user| 
-          if (user.id == @usuario_ultimo.user_id)
-            UserMailer.proyecto_asignado(user,@proyecto,@user_destinatario).deliver
+          @user.each do |user| 
+            if (user.id == @usuario_ultimo.user_id)
+              UserMailer.proyecto_asignado(user,@proyecto,@user_destinatario).deliver
+            end
           end
+          format.html { redirect_to new_usuario_proyecto_path(id: @usuario_proyecto.proyecto_id), notice: 'Usuario asociado al proyecto correctamente' }
+          #format.json { render :show, status: :created, location: @usuario_proyecto }
+        else
+          format.html { render :new }
+          format.json { render json: @usuario_proyecto.errors, status: :unprocessable_entity }
         end
-        format.html { redirect_to new_usuario_proyecto_path(id: @usuario_proyecto.proyecto_id), notice: 'Usuario proyecto was successfully created.' }
-        #format.json { render :show, status: :created, location: @usuario_proyecto }
       else
-        format.html { render :new }
+        format.html { redirect_to new_usuario_proyecto_path(id: @usuario_proyecto.proyecto_id), alert: 'Usuario agregado no válido' }
         format.json { render json: @usuario_proyecto.errors, status: :unprocessable_entity }
       end
     end
@@ -60,7 +65,7 @@ class UsuarioProyectosController < ApplicationController
   def update
     respond_to do |format|
       if @usuario_proyecto.update(usuario_proyecto_params)
-        format.html { redirect_to @usuario_proyecto, notice: 'Usuario proyecto was successfully updated.' }
+        format.html { redirect_to @usuario_proyecto, notice: 'Usuario asociado al proyecto correctamente' }
         format.json { render :show, status: :ok, location: @usuario_proyecto }
       else
         format.html { render :edit }
@@ -74,7 +79,7 @@ class UsuarioProyectosController < ApplicationController
   def destroy
     @usuario_proyecto.destroy
     respond_to do |format|
-      format.html { redirect_to usuario_proyectos_url, notice: 'Usuario proyecto was successfully destroyed.' }
+      format.html { redirect_to usuario_proyectos_url, notice: 'Usuario eliminado del proyecto correctamente' }
       format.json { head :no_content }
     end
   end
