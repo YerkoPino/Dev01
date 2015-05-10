@@ -3,11 +3,13 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
+
   def create  
     @user = User.new(user_params)  
-    if @user.save  
+    if @user.save 
+      UserMailer.registro_bienvenida(@user).deliver
       session[:user_id] = @user.id 
-      redirect_to root_url, :notice => "Signed up!"  
+      redirect_to root_url, :notice => "Te haz registrado exitosamente!"  
     else  
       render "new"  
     end  
