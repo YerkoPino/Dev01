@@ -9,5 +9,12 @@ class UserMailer < ActionMailer::Base
 
 
   end
+  def proyecto_asignado(user)
+  
+    @user = user
+    @url  = 'http://www.l-pink.cl'
+    mail(to: @user.email, subject: 'Agregado a un nuevo proyecto')
 
+
+  end
 end

@@ -17,6 +17,7 @@ class UsuarioProyectosController < ApplicationController
     @usuario_proyecto = UsuarioProyecto.new
     @proyecto = Proyecto.find(params[:id])
     @usuarios = UsuarioProyecto.all.where("proyecto_id=?",@proyecto.id)
+    @user = User.all
   end
 
   # GET /usuario_proyectos/1/edit
@@ -27,9 +28,15 @@ class UsuarioProyectosController < ApplicationController
   # POST /usuario_proyectos.json
   def create
     @usuario_proyecto = UsuarioProyecto.new(usuario_proyecto_params)
-
+    @usuario_ultimo = UsuarioProyecto.last
+    @user = User.all
     respond_to do |format|
       if @usuario_proyecto.save
+        @user.each do |user| 
+          if (user.id == @usuario_ultimo.user_id)
+            UserMailer.proyecto_asignado(user).deliver
+          end
+        end
         format.html { redirect_to new_usuario_proyecto_path(id: @usuario_proyecto.proyecto_id), notice: 'Usuario proyecto was successfully created.' }
         #format.json { render :show, status: :created, location: @usuario_proyecto }
       else

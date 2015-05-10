@@ -114,7 +114,14 @@
 
 
 </div>
-<br><br>
+<br>                             <div class="container">
+                  <% if notice %>
+                    <p class="alert alert-success" align="center"><%= notice %></p>
+                  <% end %>
+                  <% if alert %>
+                    <p class="alert alert-danger" align="center"><%= alert %></p>
+                  <% end %>
+            </div><br>
 
  <div class="row">
                  <div class="row container blanco">
@@ -218,7 +225,7 @@
                         </div>
 
                     </div>-->
-                    
+  
                     <%= yield %>
                     <br/><br/><br/><br/>
                   </div>

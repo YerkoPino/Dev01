@@ -12,6 +12,7 @@ class ProyectosController < ApplicationController
   # GET /proyectos/1.json
   def show
     @usuarios = UsuarioProyecto.all.where("proyecto_id=?",@proyecto.id)
+    @user = User.all
   end
 
   # GET /proyectos/new
