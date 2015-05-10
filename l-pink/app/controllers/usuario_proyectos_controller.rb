@@ -28,13 +28,22 @@ class UsuarioProyectosController < ApplicationController
   # POST /usuario_proyectos.json
   def create
     @usuario_proyecto = UsuarioProyecto.new(usuario_proyecto_params)
-    @usuario_ultimo = UsuarioProyecto.last
-    @user = User.all
     respond_to do |format|
       if @usuario_proyecto.save
+        @usuario_ultimo = UsuarioProyecto.last
+        @user = User.all
+        @user_destinatario = current_user
+        @proyectos = Proyecto.all
+
+        @proyectos.each do |proyect| 
+          if (proyect.id == @usuario_ultimo.proyecto_id)
+            @proyecto = proyect.nombre
+          end
+        end
+
         @user.each do |user| 
           if (user.id == @usuario_ultimo.user_id)
-            UserMailer.proyecto_asignado(user).deliver
+            UserMailer.proyecto_asignado(user,@proyecto,@user_destinatario).deliver
           end
         end
         format.html { redirect_to new_usuario_proyecto_path(id: @usuario_proyecto.proyecto_id), notice: 'Usuario proyecto was successfully created.' }
