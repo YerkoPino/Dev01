@@ -16,7 +16,9 @@
   <nav  class="morado-rosado">
     <ul id="slide-out" class="side-nav">
       <li><a href="/">Inicio</a></li>
-      <li><a href="#!">Mis Proyectos</a></li>
+      <% if current_user %> 
+      <li><%= link_to "Mis proyectos", {:controller => 'proyectos/index'}%></li>
+      <%end%>
       <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
           <li>
@@ -58,6 +60,9 @@
             <% if !current_page?(log_in_path) %>
               <li style="padding-top:10px;padding-right: 20px;">
                 <%= link_to "Iniciar Sesión", log_in_path,:class => "modal-action modal-close waves-effect waves-green btn" %>  
+              </li>
+               <li style="padding-top:10px;padding-right: 20px;">
+                <%= link_to "Registrarse", {:controller => 'users/new'},:class => "modal-action modal-close waves-effect waves-green btn" %>  
               </li>
             <% else %>
               <li style="padding-top:10px;padding-right: 20px;">
@@ -110,7 +115,14 @@
 
 
 </div>
-<br><br>
+<br>                             <div class="container">
+                  <% if notice %>
+                    <p class="alert alert-success" align="center"><%= notice %></p>
+                  <% end %>
+                  <% if alert %>
+                    <p class="alert alert-danger" align="center"><%= alert %></p>
+                  <% end %>
+            </div><br>
 
  <div class="row">
                  <div class="row container blanco">
@@ -214,7 +226,7 @@
                         </div>
 
                     </div>-->
-                    
+  
                     <%= yield %>
                     <br/><br/><br/><br/>
                   </div>

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
   get 'sessions/new'
+  get 'proyectos/index'
 
-  #get 'users/new'
+  get 'users/new'
 
   resources :usuario_tareas
   resources :usuario_elementos

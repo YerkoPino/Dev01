@@ -13,10 +13,14 @@
   </thead>
 
   <tbody>
-    <% @usuarios.each do |usuario| %>
-      <tr>
-        <td><%= usuario.user.nombre %> <%= usuario.user.apellido %></td>
-      </tr>
-    <% end %>
+      <td colspan="2">
+      <% @usuarios.each do |usuario| %>
+        <% @user.each do |user| %>
+          <%if (usuario.user_id == user.id)%>
+             <%= user.nombre %> <%= user.apellido %><br/>
+          <% end %>
+        <% end %>
+      <% end %>
+      </td>
   </tbody>
 </table>
