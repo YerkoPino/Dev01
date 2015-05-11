@@ -4,7 +4,7 @@ class CreateEstadoTareas < ActiveRecord::Migration
       t.string :nombre, limit: 25
       t.string :descripcion, limit: 300
 
-      t.timestamps null: false
+      
     end
   end
 end

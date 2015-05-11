@@ -6,7 +6,7 @@ class CreateTemas < ActiveRecord::Migration
       t.string :estado, limit: 30
       t.references :acta_reunion, index: true, foreign_key: true
 
-      t.timestamps null: false
+      
     end
   end
 end

@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :tipo
       t.string :password_hash
       t.string :password_salt
+      t.string :avatar_url
     end
   end
 end

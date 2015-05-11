@@ -10,7 +10,7 @@ class CreateElementos < ActiveRecord::Migration
       t.references :tema, index: true, foreign_key: true
       t.references :elemento, index: true, foreign_key: true
 
-      t.timestamps null: false
+      
     end
   end
 end

@@ -4,7 +4,7 @@ class CreateComentarios < ActiveRecord::Migration
       t.string :descripcion, limit: 300
       t.references :tarea, index: true, foreign_key: true
 
-      t.timestamps null: false
+      
     end
   end
 end

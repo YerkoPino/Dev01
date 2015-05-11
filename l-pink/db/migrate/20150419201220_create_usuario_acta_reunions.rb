@@ -5,7 +5,7 @@ class CreateUsuarioActaReunions < ActiveRecord::Migration
       t.references :user, index: true, foreign_key: true
       t.boolean :secretario
 
-      t.timestamps null: false
+      
     end
   end
 end

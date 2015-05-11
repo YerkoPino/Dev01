@@ -5,7 +5,7 @@ class CreateActaReunions < ActiveRecord::Migration
       t.integer :correlativo
       t.references :proyecto, index: true, foreign_key: true
 
-      t.timestamps null: false
+
     end
   end
 end

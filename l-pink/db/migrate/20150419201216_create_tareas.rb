@@ -6,7 +6,7 @@ class CreateTareas < ActiveRecord::Migration
       t.references :estado_tarea, index: true, foreign_key: true
       t.references :elemento, index: true, foreign_key: true
 
-      t.timestamps null: false
+      
     end
   end
 end

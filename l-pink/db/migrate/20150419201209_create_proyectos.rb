@@ -5,8 +5,6 @@ class CreateProyectos < ActiveRecord::Migration
       t.string :descripcion, limit: 300
       t.date :fecha_inicio
       t.date :fecha_fin
-
-      t.timestamps null: false
     end
   end
 end
