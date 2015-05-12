@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20150419201223) do
     t.string "password_hash", limit: 255
     t.string "password_salt", limit: 255
     t.string "avatar_url",    limit: 255
+    t.string "identificador", limit: 255
   end
 
   create_table "usuario_acta_reunions", force: :cascade do |t|

@@ -49,24 +49,44 @@
             <i class="fa fa-user"></i>
           </a>
           <%= link_to "",new_session_path,:class => "btn-floating btn red modal-trigger" %>-->
-            <%= image_tag avatar_url(current_user) , :style => "vertical-align:middle" %>
-            <%= current_user.nombre %> <%= current_user.apellido %>  
+            <%= image_tag avatar_url(current_user) ,:size => "50x50", :style => "vertical-align:middle" %>
         </li>
-        <li style="padding-left:5px;padding-right:5px;height:64px;font-size:250%;color:#60003E">|</li>
-        <li style="padding-left:5px;padding-right: 20px;height:64px">
-            <%= link_to "Cerrar Sesión", log_out_path,:class => "modal-action modal-close waves-effect waves-green btn" %>  
+        <li style="height:64px">
+            <%= link_to user_path(current_user),:style => "vertical-align:middle" do %>
+              <%= current_user.nombre %> <%= current_user.apellido %>
+            <% end %>
+            <!--<%= current_user.nombre %> <%= current_user.apellido %>  -->
+        </li>
+        <li style="height:64px;font-size:250%;color:#60003E">|</li>
+        <li style="padding-right: 10px;height:64px">
+            <%= link_to "Cerrar Sesión", log_out_path, :style => "vertical-align:middle" %>  
         </li>
           <% else %>  
             <% if !current_page?(log_in_path) %>
-              <li style="padding-top:10px;padding-right: 20px;">
-                <%= link_to "Iniciar Sesión", log_in_path,:class => "modal-action modal-close waves-effect waves-green btn" %>  
-              </li>
-               <li style="padding-top:10px;padding-right: 20px;">
-                <%= link_to "Registrarse", {:controller => 'users/new'},:class => "modal-action modal-close waves-effect waves-green btn" %>  
-              </li>
+              <% if !current_page?(new_user_path)%>
+                <li style="height:64px">
+                  <%= link_to "Iniciar Sesión", log_in_path, :style => "vertical-align:middle" %>  
+                </li>
+                <li style="height:64px;font-size:250%;color:#60003E">|</li>
+                 <li style="height:64px;padding-right: 10px;">
+                  <%= link_to "Registrarse", new_user_path, :style => "vertical-align:middle" %>  
+                </li>
+              <% else %>
+                <li style="height:64px">
+                  <%= link_to "Iniciar Sesión", log_in_path, :style => "vertical-align:middle" %>  
+                </li>
+                <li style="height:64px;font-size:250%;color:#60003E">|</li>
+                <li style="height:64px;padding-right: 10px;">
+                  <%= link_to "Volver", root_url,:style => "vertical-align:middle" %>  
+                </li>
+              <% end %>
             <% else %>
-              <li style="padding-top:10px;padding-right: 20px;">
-                <%= link_to "Volver", root_url ,:class => "modal-action modal-close waves-effect waves-green btn" %>  
+              <li style="height:64px">
+              <%= link_to "Registrarse", new_user_path, :style => "vertical-align:middle" %>
+              </li>
+              <li style="height:64px;font-size:250%;color:#60003E">|</li>
+              <li style="height:64px;padding-right: 10px;">
+                <%= link_to "Volver", root_url,:style => "vertical-align:middle" %>  
               </li>
             <% end %>
           <% end %>  

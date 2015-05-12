@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get 'proyectos/index'
 
   get 'users/new'
+  get 'users/edit'
+  get 'users/show'
+  get 'users/edit_avatar'
+  get 'users/edit_password'
 
   resources :usuario_tareas
   resources :usuario_elementos

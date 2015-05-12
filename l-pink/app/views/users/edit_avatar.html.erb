@@ -1,0 +1,24 @@
+<div style="margin:0 auto;width:50%">
+<h3>Cambiar Imagen de Perfil</h3>  
+  
+<%= form_for @user do |f| %>  
+  <% if @user.errors.any? %>  
+    <div class="error_messages">  
+      <h2>Form is invalid</h2>  
+      <ul>  
+        <% for message in @user.errors.full_messages %>  
+          <li><%= message %></li>  
+        <% end %>  
+      </ul>  
+    </div>  
+  <% end %>
+  <div class="field">
+    <%= label_tag "Link imagen:" %>  
+    <%= f.text_field :avatar_url %>  
+  </div>
+  <br/>
+  <div style="text-align:center">
+  <%= f.submit "Guardar", :class => "btn btn-success", :style => "margin-right:5%" %><%= link_to "Volver", :back, :class => "btn btn-success", :style => "margin-left:5%" %>
+  </div>
+<% end %>
+</div>

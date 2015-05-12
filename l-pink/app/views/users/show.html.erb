@@ -1,0 +1,27 @@
+<div style="margin:0 auto;width:50%">
+<h3>Información de usuario</h3>
+<br/>
+<table>
+	<tr>
+		<td width="15%"><%= label_tag "Nombre: " %></td>
+		<td><%= @user.nombre %> <%= @user.apellido %></td>
+	</tr>
+	<tr>
+		<td><%= label_tag "E-mail: " %></td>
+		<td><%= @user.email %></td>
+	</tr>
+</table>
+<br/>
+
+<div style="text-align:center">
+	<%= link_to "Editar información",edit_user_path,:class => "waves-effect waves-light btn",:style => "margin-right:5%" %><%= link_to "Cambiar contraseña",{controller: "users", action: "edit_password", id: @user.id},:class => "waves-effect waves-light btn",:style => "margin-left:5%" %></div>
+<br/>
+<h5>Imagen de perfil</h5>
+<br/>
+<%= image_tag avatar_url(@user),:size => "200x200", :style => "border:1px solid;vertical-align:middle" %>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Cambiar Imagen",{controller: "users", action: "edit_avatar", id: @user.id},:class => "waves-effect waves-light btn" %>
+<br/>
+<br/>
+<br/>
+<div style="text-align:center"><%= link_to "Volver", proyectos_path,:class => "waves-effect waves-light btn" %></div>
+</div>
