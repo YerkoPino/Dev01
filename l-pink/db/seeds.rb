@@ -5,6 +5,33 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# proyecto = Proyecto.new
+# proyecto.id = '1'
+# proyecto.nombre = 'L-Pink'
+# proyecto.descripcion = 'Proyecto que busca facilitar la metodología scrum, registrando actas dialógicas.'
+# proyecto.fecha_inicio = '2015-04-08'
+# proyecto.fecha_fin = '2015-04-22'
+# proyecto.save!
+
+# proyecto = Proyecto.new
+# proyecto.id = '2'
+# proyecto.nombre = 'Dentool'
+# proyecto.descripcion = 'Proyecto centrado en la creación de un software que facilite la obtención de datos estadísticos para atenciones de un centro dental.'
+# proyecto.fecha_inicio = '2014-07-29'
+# proyecto.fecha_fin = '2014-11-29'
+
+# proyecto = Proyecto.new
+# proyecto.id = '3'
+# proyecto.nombre = 'Traminet'
+# proyecto.descripcion = 'Proyecto de software que busca crear una plataforma web para compartir información respecto a diferentes tipos de tramites.'
+# proyecto.fecha_inicio = '2014-07-09'
+# proyecto.fecha_fin = '2014-12-03'
+
+Proyecto.create(:id => '1', :nombre => 'L-Pink', :descripcion => 'Proyecto que busca facilitar la metodología scrum, registrando actas dialógicas.', :fecha_inicio => '2015-04-08', :fecha_fin => '2015-08-22')
+Proyecto.create(:id => '2', :nombre => 'Dentool', :descripcion => 'Proyecto centrado en la creación de un software que facilite la obtención de datos estadísticos para atenciones de un centro dental', :fecha_inicio => '2014-07-29', :fecha_fin => '2015-11-29')
+Proyecto.create(:id => '3', :nombre => 'Traminet', :descripcion => 'Proyecto de software que busca crear una plataforma web para compartir información respecto a diferentes tipos de tramites', :fecha_inicio => '2014-07-09', :fecha_fin => '2015-12-03')
+
 user = User.new
 user.id = '1'
 user.email = 'camilo.jimenez@usach.cl'
@@ -13,6 +40,7 @@ user.apellido = 'Jimenez'
 user.tipo = 'alumno'
 user.password = '12345678'
 user.password_confirmation = '12345678'
+user.identificador = 'CJ'
 user.save!
 
 user = User.new
@@ -23,6 +51,7 @@ user.apellido = 'RuizTagle'
 user.tipo = 'alumno'
 user.password = '12345678'
 user.password_confirmation = '12345678'
+user.identificador = 'BR'
 user.save!
 
 user = User.new
@@ -33,6 +62,7 @@ user.apellido = 'Pino'
 user.tipo = 'alumno'
 user.password = '12345678'
 user.password_confirmation = '12345678'
+user.identificador = 'YP'
 user.save!
 
 user = User.new
@@ -43,6 +73,7 @@ user.apellido = 'Quinteros'
 user.tipo = 'alumno'
 user.password = '12345678'
 user.password_confirmation = '12345678'
+user.identificador = 'MQ'
 user.save!
 
 user = User.new
@@ -53,6 +84,7 @@ user.apellido = 'Vicencio'
 user.tipo = 'alumno'
 user.password = '12345678'
 user.password_confirmation = '12345678'
+user.identificador = 'IV'
 user.save!
 
 user = User.new
@@ -63,6 +95,7 @@ user.apellido = 'Vargas'
 user.tipo = 'alumno'
 user.password = '12345678'
 user.password_confirmation = '12345678'
+user.identificador = 'DV'
 user.save!
 
 user = User.new
@@ -73,6 +106,7 @@ user.apellido = 'Cortes'
 user.tipo = 'alumno'
 user.password = '12345678'
 user.password_confirmation = '12345678'
+user.identificador = 'JC'
 user.save!
 
 user = User.new
@@ -83,6 +117,7 @@ user.apellido = 'Garate'
 user.tipo = 'alumno'
 user.password = '12345678'
 user.password_confirmation = '12345678'
+user.identificador = 'AG'
 user.save!
 
 user = User.new
@@ -93,6 +128,7 @@ user.apellido = 'Vasquez'
 user.tipo = 'alumno'
 user.password = '12345678'
 user.password_confirmation = '12345678'
+user.identificador = 'CV'
 user.save!
 
 user = User.new
@@ -103,11 +139,8 @@ user.apellido = 'Salinas'
 user.tipo = 'alumno'
 user.password = '12345678'
 user.password_confirmation = '12345678'
+user.identificador = 'PS'
 user.save!
-
-Proyecto.create(:id => '1', :nombre => 'L-Pink', :descripcion => 'Proyecto que busca facilitar la metodología scrum, registrando actas dialógicas.', :fecha_inicio => '2015-04-08', :fecha_fin => '2015-04-22')
-Proyecto.create(:id => '2', :nombre => 'Dentool', :descripcion => 'Proyecto centrado en la creación de un software que facilite la obtención de datos estadísticos para atenciones de un centro dental', :fecha_inicio => '2014-07-29', :fecha_fin => '2014-11-29')
-Proyecto.create(:id => '3', :nombre => 'Traminet', :descripcion => 'Proyecto de software que busca crear una plataforma web para compartir información respecto a diferentes tipos de tramites', :fecha_inicio => '2014-07-09', :fecha_fin => '2014-12-03')
 
 UsuarioProyecto.create(:proyecto_id => '1', :user_id => '1')
 UsuarioProyecto.create(:proyecto_id => '1', :user_id => '2')
