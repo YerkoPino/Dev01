@@ -1,15 +1,5 @@
   <h3>Proyecto <%= @proyecto.nombre %></h3>
-  
-<table style="width:35%;margin:0 auto">
-	<tr>
-		<td>Fecha inicio:</td>
-		<td><%= @proyecto.fecha_inicio %></td>
-		<td>&nbsp</td>
-		<td>Fecha fin:</td>
-		<td><%= @proyecto.fecha_fin %></td>
-	</tr>
-</table>
-  
+    
 <table style="width:70%;margin:0 auto">
 <thead>
 	<tr>
@@ -23,6 +13,15 @@
 </tbody>
 </table>
 
+<table style="width:70%;margin:0 auto">
+	<tr>
+		<td><b>Fecha inicio:</b></td>
+		<td><%= @proyecto.fecha_inicio %></td>
+		<td>&nbsp</td>
+		<td><b>Fecha fin:</b></td>
+		<td><%= @proyecto.fecha_fin %></td>
+	</tr>
+</table>
 
 <table style="width:20%;margin:0 auto">
 	<tr>

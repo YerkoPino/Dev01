@@ -10,26 +10,27 @@
 </tr>
 </table>
 
+<h5>Mis proyectos</h5>
 <table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Fecha inicio</th>
-      <th>Fecha fin</th>
-      <th>Ver Detalles</th>
-    </tr>
-  </thead>
-
+  
   <tbody>
     <% @proyectos.each do |proyecto| %>
     <% @usuario_proyectos.each do |usuario_proyecto| %>
       <tr>
       <% if (proyecto.id == usuario_proyecto.proyecto_id and usuario_proyecto.user_id==current_user.id) %>
-        <td><%= proyecto.nombre %></td>
-        <td><%= proyecto.fecha_inicio %></td>
-        <td><%= proyecto.fecha_fin %></td>
-        <td><%= link_to 'Ver Detalles', proyecto %></td>
+
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <i class="mdi-file-folder circle"></i>
+            <span class="title">Proyecto: <%= proyecto.nombre %></span>
+            <p>Duración: <%= proyecto.fecha_inicio %> hasta <%= proyecto.fecha_fin %><br>
+              <%= link_to 'Ver Detalles', proyecto %>
+            </p>            
+          </li>
+        </ul> 
+
       </tr>
+
       <%end%>
       <%end%>
     <% end %>
