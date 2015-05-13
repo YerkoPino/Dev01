@@ -18,4 +18,11 @@ class UserMailer < ActionMailer::Base
 
 
   end
+  def contrasena(usuario)
+    @user = usuario
+    @url  = 'http://www.l-pink.cl'
+    mail(to: @user.email, subject: 'Restablecer contraseña')
+
+
+  end
 end
