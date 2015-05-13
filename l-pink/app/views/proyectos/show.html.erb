@@ -49,7 +49,7 @@
 			<% @usuarios.each do |usuario| %>
 			<% @user.each do |user| %>
 			<%if (usuario.user_id == user.id)%>
-				 <%= user.nombre %> <%= user.apellido %><br/>
+				 <%= image_tag avatar_url(user),:size => "50x50", :style => "vertical-align:middle;margin:1% 0" %> <%= user.nombre %> <%= user.apellido %><br/>
 			<% end %>
 			<% end %>
 			<% end %>

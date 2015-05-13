@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 	validates_presence_of :apellido, :message => "%{value} es un campo obligatorio."
 	validates_presence_of :email, :message => "%{value} es un campo obligatorio."
 	validates_confirmation_of :password, :message => " no coincide."
-	validates_presence_of :password, :on => [:create,:update], :message => "%{value} es un campo obligatorio."
+	validates_presence_of :password, :on => [:create], :message => "%{value} es un campo obligatorio."
 	validates_uniqueness_of :email 
 
 	def encrypt_password  

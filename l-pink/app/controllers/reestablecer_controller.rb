@@ -8,6 +8,9 @@ class ReestablecerController < ApplicationController
       	user.password = "L2P0I1N5K"
       	user.save
         UserMailer.contrasena(user).deliver
+        respond_to do |format|
+          format.html {redirect_to root_url, notice: 'Se ha enviado un mail con su nueva contraseña.' }
+        end
       end
     end
     

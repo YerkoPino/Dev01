@@ -38,6 +38,10 @@ class ProyectosController < ApplicationController
         format.json { render json: @proyecto.errors, status: :unprocessable_entity }
       end
     end
+    @usuario_pro = UsuarioProyecto.new
+    @usuario_pro.proyecto_id = @proyecto.id
+    @usuario_pro.user_id = current_user.id
+    @usuario_pro.save
   end
 
   # PATCH/PUT /proyectos/1

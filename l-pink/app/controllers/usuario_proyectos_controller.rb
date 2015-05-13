@@ -38,7 +38,7 @@ class UsuarioProyectosController < ApplicationController
 
           @proyectos.each do |proyect| 
             if (proyect.id == @usuario_ultimo.proyecto_id)
-              @proyecto = proyect.nombre
+              @proyecto = proyect
             end
           end
 

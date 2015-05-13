@@ -1,9 +1,9 @@
+<div style="width:60%;margin:0 auto">
 <%= form_for(@proyecto) do |f| %>
   <% if @proyecto.errors.any? %>
     <div id="error_explanation">
       <!--<h2><%= pluralize(@proyecto.errors.count, "error") %> prohibited this proyecto from being saved:</h2>-->      
-      <p class="alert alert-danger" align="center">
-      <b>ERROR</b><br>
+      <p class="alert alert-danger" align="center" style="text-align:center">
       <% @proyecto.errors.full_messages.each do |message| %>
         <%= message %><br>
       <% end %>
@@ -12,28 +12,34 @@
     </div>
   <% end %>
 
-  <div style="width:70%;margin:0 auto">
-
   <div class="field">
-    <%= f.label :nombre %><br>
+    <%= f.label :nombre %>
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :descripcion %><br>
+    <%= f.label "Descripción" %>
     <%= f.text_field :descripcion %>
   </div>
-  <div class="field">
-    <%= f.label :fecha_inicio %><br>
-    <%= f.date_select :fecha_inicio, {:use_month_names => ["Enero","Febrero","Marzo","Abirl","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]},:type => "date", :class => "datepicker" %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha_fin %><br>
-    <%= f.date_select :fecha_fin %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Guardar", :class=>"btn btn-primary btn-xs" %>
+  <table border="1px solid">
+    <tr>
+      <td>
+        <div class="field" style="width:50%">
+          <%= f.label :fecha_inicio %>
+          <%= f.date_select :fecha_inicio, {:use_month_names => ["Enero","Febrero","Marzo","Abirl","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]},:type => "date", :class => "datepicker" %>
+        </div>
+      </td>
+      <td >
+        <div class="field" style="width:50%">
+          <%= f.label :fecha_fin %>
+          <%= f.date_select :fecha_fin, {:use_month_names => ["Enero","Febrero","Marzo","Abirl","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]},:type => "date", :class => "datepicker" %>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="actions" style="text-align:center">
+    <%= f.submit "Crear", :class=>"btn btn-primary btn-xs", :style => "margin-right:5%" %>
   
-  <%= link_to 'Atrás', proyectos_path, :class => 'modal-action modal-close waves-effect waves-green btn' %>
+  <%= link_to 'Atrás', @proyecto, :class => 'modal-action modal-close waves-effect waves-green btn', :style => "margin-left:5%" %>
   </div>
 
   </div>

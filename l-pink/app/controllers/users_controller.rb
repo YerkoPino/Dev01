@@ -21,7 +21,8 @@ class UsersController < ApplicationController
       @contador = @contador + 1
       @user_aux = User.find_by_identificador(@aux_id.join(""))
     end
-    @user.identificador = @aux_id.join("")
+    @user.identificador = @aux_id.join("").upercase
+    @user.tipo = 'team'
     if @user.save 
       UserMailer.registro_bienvenida(@user).deliver
       session[:user_id] = @user.id 

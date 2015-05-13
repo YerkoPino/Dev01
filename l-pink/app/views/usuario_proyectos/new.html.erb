@@ -1,11 +1,17 @@
+<div style="margin:0 auto;width:60%">
 <h3>Agregar Usuarios</h3> 
 <h5>Proyecto <%= @proyecto.nombre %></h5>
-<p>Paso 2 de 2</p>
+
+<p>
+  Para asociar usuarios al proyecto actual, seleccionelo en la lista desplegable y presione "Agregar Usuario". Cuando termine la asociación, presione "Listo".
+</p>
+
+</div>
 
 <%= render 'form' %>
 <br/>
 
-<table style="width:50%;margin:0 auto">
+<table style="width:60%;margin:0 auto">
   <thead>
     <tr>
       <th>Nombre Colaborador</th>
@@ -17,7 +23,7 @@
       <% @usuarios.each do |usuario| %>
         <% @user.each do |user| %>
           <%if (usuario.user_id == user.id)%>
-             <%= user.nombre %> <%= user.apellido %><br/>
+             <%= image_tag avatar_url(user),:size => "50x50", :style => "vertical-align:middle;margin:1% 0" %> <%= user.nombre %> <%= user.apellido %><br/>
           <% end %>
         <% end %>
       <% end %>
