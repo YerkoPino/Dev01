@@ -32,15 +32,15 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @edit = :true
+    $edit = 1
   end
 
   def edit_avatar
-    @edit = :true
+    $edit = 1
   end
 
   def edit_password
-    @edit = :false
+    $edit = 0
   end
 
   def show    
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'Datos guardados exitosamente' }
         format.json { render :show, status: :ok, location: @user }
       else
-        if @edit
+        if $edit == 1
           format.html { render :edit }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         else
@@ -72,6 +72,6 @@ class UsersController < ApplicationController
   end
 
   def set_pag
-    @edit
+    $edit
   end
 end

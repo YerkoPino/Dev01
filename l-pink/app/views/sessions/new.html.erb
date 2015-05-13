@@ -21,7 +21,12 @@
 
 	<br/>
 	<br/>
-  <%= submit_tag "Iniciar Sesión", :class => "btn btn-success", :style => "margin-left:30%;" %>
+	<div style="text-align:center">
+  <%= submit_tag "Iniciar Sesión", :class => "btn btn-success" %>
+  <br/>
+  <br/>
+  <%= link_to "¿Olvidó su contraseña?", {:controller => 'reestablecer/restablecer'} %>
+  </div>
 
 <% end %> 
 

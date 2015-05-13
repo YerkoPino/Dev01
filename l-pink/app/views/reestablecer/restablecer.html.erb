@@ -1,0 +1,11 @@
+    <h2>Restablecer contraseña</h2>  
+      <p>Al momento de Enviar te llegará una nueva contraseña a tu Email. Luego ve a Iniciar sesión con tu nueva contraseña.</p>
+      <%= form_tag :action => 'restablecer' do %>
+      <p>  
+        <%= label_tag :email %><br />  
+        <%= text_field_tag :email %>  
+      </p> 
+
+     <%= submit_tag 'Enviar', :class=> "btn btn-lg btn-success "  %>&nbsp;<%= link_to "Inicia sesión", log_in_path, :class => "btn btn-lg btn-warning"  %>
+      
+    <% end %>

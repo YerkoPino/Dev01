@@ -1,6 +1,8 @@
 <div style="margin:0 auto;width:50%">
 <h3>Cambiar Imagen de Perfil</h3>  
-  
+<p>
+  A continuación ingrese la URL de la imagen que desea como imagen de perfil, luego presione el botón guardar para conservarla. Este cambio no afectará a la imagen almacenada en Gravatar. Para dejar la imagen de Gravatar como imagen de perfil simplemente deje en blanco el campo "Link Imagen".
+</p>
 <%= form_for @user do |f| %>  
   <% if @user.errors.any? %>  
     <div class="error_messages">  
@@ -18,7 +20,7 @@
   </div>
   <br/>
   <div style="text-align:center">
-  <%= f.submit "Guardar", :class => "btn btn-success", :style => "margin-right:5%" %><%= link_to "Volver", :back, :class => "btn btn-success", :style => "margin-left:5%" %>
+  <%= f.submit "Guardar", :class => "btn btn-success", :style => "margin-right:5%",data: {confirm: "¿Desea guardar la nueva imagen?"} %><%= link_to "Volver", user_path(current_user), :class => "btn btn-success", :style => "margin-left:5%" %>
   </div>
 <% end %>
 </div>
