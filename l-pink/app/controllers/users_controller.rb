@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:edit,:show,:update,:edit_avatar,:edit_password]
+  before_action :set_pag, only: [:edit,:edit_password,:edit_avatar,:update]
 
   def new
   	@user = User.new
@@ -31,12 +32,15 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @edit = :true
   end
 
   def edit_avatar
+    @edit = :true
   end
 
   def edit_password
+    @edit = :false
   end
 
   def show    
@@ -45,11 +49,16 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'Tema was successfully updated.' }
+        format.html { redirect_to @user, notice: 'Datos guardados exitosamente' }
         format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        if @edit
+          format.html { render :edit }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        else
+          format.html { render :edit_password }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -60,5 +69,9 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_pag
+    @edit
   end
 end

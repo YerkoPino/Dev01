@@ -27,7 +27,8 @@
     <%= f.label :email %> 
     <%= f.text_field :email %>  
   </div>
+  <br/>
   <div style="text-align:center">
-  <%= f.submit "Guardar", :class => "btn btn-success", :style => "margin-right:5%" %><%= link_to "Volver", :back, :class => "btn btn-success", :style => "margin-left:5%" %></div>
+  <%= f.submit "Guardar", :class => "btn btn-success", :style => "margin-right:5%" %><%= link_to "Volver", user_path(current_user), :class => "btn btn-success", :style => "margin-left:5%" %></div>
 <% end %>  
 </div>

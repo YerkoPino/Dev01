@@ -42,25 +42,20 @@
       <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
       <a href="/" class="brand-logo" style="height:64px"><%= image_tag "logo4.png", :class => "responsive-img adaptarLogo", :title => "logo"%></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down" style="height:64px">
-         <!--<li style="padding-top:10px;padding-right: 20px;"><a class="btn-floating btn red modal-trigger" href="#modal1"><i class="fa fa-user"></i></a></li>-->
          <% if current_user %>  
-        <li style="padding-right: 5px;height:64px">
-          <!--<a class="btn-floating btn red modal-trigger" href="#modal1">
-            <i class="fa fa-user"></i>
-          </a>
-          <%= link_to "",new_session_path,:class => "btn-floating btn red modal-trigger" %>-->
-            <%= image_tag avatar_url(current_user) ,:size => "50x50", :style => "vertical-align:middle" %>
-        </li>
-        <li style="height:64px">
-            <%= link_to user_path(current_user),:style => "vertical-align:middle" do %>
-              <%= current_user.nombre %> <%= current_user.apellido %>
-            <% end %>
-            <!--<%= current_user.nombre %> <%= current_user.apellido %>  -->
-        </li>
-        <li style="height:64px;font-size:250%;color:#60003E">|</li>
-        <li style="padding-right: 10px;height:64px">
-            <%= link_to "Cerrar Sesión", log_out_path, :style => "vertical-align:middle" %>  
-        </li>
+          <li style="padding-right: 5px;height:64px">
+              <%= image_tag avatar_url(current_user) ,:size => "50x50", :style => "vertical-align:middle" %>
+          </li>
+          <li style="height:64px">
+              <%= link_to user_path(current_user),:style => "vertical-align:middle" do %>
+                <%= current_user.nombre %> <%= current_user.apellido %>
+              <% end %>
+              <!--<%= current_user.nombre %> <%= current_user.apellido %>  -->
+          </li>
+          <li style="height:64px;font-size:250%;color:#60003E">|</li>
+          <li style="padding-right: 10px;height:64px">
+              <%= link_to "Cerrar Sesión", log_out_path, :style => "vertical-align:middle" %>  
+          </li>
           <% else %>  
             <% if !current_page?(log_in_path) %>
               <% if !current_page?(new_user_path)%>

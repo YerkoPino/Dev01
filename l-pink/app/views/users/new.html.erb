@@ -1,38 +1,42 @@
-    <h1>Registrarse</h1>  
+<div style="margin:0 auto;width:50%">    
+    <h3>Registrarse</h3>  
       
     <%= form_for @user do |f| %>  
       <% if @user.errors.any? %>  
-        <div class="error_messages">  
-          <h2>Form is invalid</h2>  
-          <ul>  
-            <% for message in @user.errors.full_messages %>  
-              <li><%= message %></li>  
-            <% end %>  
-          </ul>  
+        <div class="alert alert-danger" role="alert" style="text-align:center">  
+            <ul>  
+              <% for message in @user.errors.full_messages %>  
+                <li><%= message %></li>  
+              <% end %>  
+            </ul>
+            <br/>  
         </div>  
       <% end %>
-      <p>  
-        <%= f.label :nombre %><br />  
+      <br/>
+      <div class="field">
+        <%= f.label :nombre %>
         <%= f.text_field :nombre %>  
-      </p>
-      <p>  
-        <%= f.label :apellido %><br />  
+      </div>
+      <div class="field">
+        <%= f.label :apellido %>
         <%= f.text_field :apellido %>  
-      </p>  
-      <p>  
+      </div>
+      <div class="field">
         <%= f.hidden_field :tipo, :value=> 'alumno' %> 
-      </p>
-      <p>  
-        <%= f.label :email %><br />  
+      </div>
+      <div class="field">
+        <%= f.label :email %> 
         <%= f.text_field :email %>  
-      </p>  
-      <p>  
-        <%= f.label :password %><br />  
+      </div>
+      <div class="field">
+        <%= f.label :password %> 
         <%= f.password_field :password %>  
-      </p>  
-      <p>  
-        <%= f.label :password_confirmation %>  
+      </div>
+      <div class="field">
+        <%= label_tag "Confirmación de password" %>  
         <%= f.password_field :password_confirmation %>  
-      </p>  
-      <p class="button"><%= f.submit %></p>  
+      </div>
+      <br/>
+      <div style="text-align:center" ><%= f.submit "Registrar", :class => "btn btn-success", :style => "margin-right:5%"%><%= link_to "Volver", root_path, :class => "btn btn-success", :style => "margin-left:5%" %></div>
     <% end %>  
+</div>
